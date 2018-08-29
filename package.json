@@ -1,0 +1,82 @@
+{
+    "name": "nightlight",
+    "displayName": "nightlight",
+    "description": "Automaticall switch themes when it's getting dark",
+    "version": "1.0.0",
+    "publisher": "intodevelopment",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "nightlight.enableDayTheme",
+                "title": "Nightlight: Enable day theme"
+            },
+            {
+                "command": "nightlight.enableNightTheme",
+                "title": "Nightlight: Enable night theme"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Nightlight configuration",
+            "properties": {
+                "nightlight.nightTheme": {
+                    "type": "string",
+                    "default": "Default Dark+",
+                    "description": "The theme to be displayed when it's night"
+                },
+                "nightlight.dayTheme": {
+                    "type": "string",
+                    "default": "Default Light+",
+                    "description": "The theme to be displayed when it's day"
+                },
+                "nightlight.dayTimeStart": {
+                    "type": "string",
+                    "default": "10:00",
+                    "description": "The time (format HH:mm) at which day time starts (if no GPS coordinates are configured)"
+                },
+                "nightlight.dayTimeEnd": {
+                    "type": "string",
+                    "default": "21:00",
+                    "description": "The time (format HH:mm) at which day time ends (if no GPS coordinates are configured)"
+                },
+                "nightlight.gpsLong": {
+                    "type": "number",
+                    "default": null,
+                    "description": "The GPS longitude coordinate. This is used to determine the sunrise and sunset locally on your device."
+                },
+                "nightlight.gpsLat": {
+                    "type": "number",
+                    "default": null,
+                    "description": "The GPS latitude coordinate. This is used to determine the sunrise and sunset locally on your device."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "suncalc": "^1.8.0"
+    }
+}
