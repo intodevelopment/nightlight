@@ -1,4 +1,4 @@
-# Nightlight README
+# Nightlight
 
 Nightlight is an extension for VS Code. It automatically switches between a dark and light theme based on the position of the sun or on your own terms.
 

@@ -75,7 +75,7 @@ export class Nightlight {
    */
   private enableTheme(theme: string){
     const userConfig = vscode.workspace.getConfiguration();
-    userConfig.update("workbench.colorTheme", theme, vscode.ConfigurationTarget.Workspace);
+    userConfig.update("workbench.colorTheme", theme, vscode.ConfigurationTarget.Global);
   }
 
   /**

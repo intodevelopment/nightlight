@@ -2,10 +2,14 @@
     "name": "nightlight",
     "displayName": "Nightlight",
     "description": "Automaticall switch themes when it's getting dark",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "intodevelopment",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/intodevelopment/nightlight.git"
+    },
     "engines": {
-        "vscode": "^1.23.0"
+        "vscode": "^1.26.0"
     },
     "categories": [
         "Other"
@@ -82,9 +86,9 @@
     },
     "devDependencies": {
         "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.69",
-        "tslint": "^5.11.0",
-        "typescript": "^2.9.2",
+        "@types/node": "^8.10.25",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
         "vscode": "^1.1.21"
     },
     "dependencies": {
