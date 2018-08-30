@@ -1,8 +1,8 @@
 {
     "name": "nightlight",
     "displayName": "Nightlight",
-    "description": "Automaticall switch themes when it's getting dark",
-    "version": "1.0.1",
+    "description": "Automatically switch themes when it's getting dark",
+    "version": "1.0.2",
     "publisher": "intodevelopment",
     "repository": {
         "type": "git",
