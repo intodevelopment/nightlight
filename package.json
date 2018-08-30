@@ -1,6 +1,6 @@
 {
     "name": "nightlight",
-    "displayName": "nightlight",
+    "displayName": "Nightlight",
     "description": "Automaticall switch themes when it's getting dark",
     "version": "1.0.0",
     "publisher": "intodevelopment",
@@ -10,6 +10,17 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "night",
+        "night shift",
+        "theme switch",
+        "dark"
+    ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#091427",
+        "theme": "dark"
+    },
     "activationEvents": [
         "*"
     ],
