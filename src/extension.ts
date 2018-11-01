@@ -16,14 +16,14 @@ export function activate(context: vscode.ExtensionContext) {
     // Register commands
     let enableNightThemeCmd = vscode.commands.registerCommand('nightlight.enableNightTheme', () => {
         if(nightlight !== null){
-            nightlight.enableNightTheme();
+            nightlight.enableNightTheme(true);
         }
     });
     context.subscriptions.push(enableNightThemeCmd);
 
     let enableDayThemeCmd = vscode.commands.registerCommand('nightlight.enableDayTheme', () => {
         if(nightlight !== null){
-            nightlight.enableDayTheme();
+            nightlight.enableDayTheme(true);
         }
     });
     context.subscriptions.push(enableDayThemeCmd);

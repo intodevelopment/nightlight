@@ -38,7 +38,7 @@ export class Nightlight {
     const currentTheme = userConfig.get("workbench.colorTheme") as string;
 
     if (this.isDayTime()) {
-      if (currentTheme !== this.config.dayTheme) {
+      if (currentTheme !== this.config.dayTheme && !this.isOverrideSet()) {
         vscode.window.showInformationMessage("Hello! I'll turn on the lights for you.");
         this.enableDayTheme();
       }
@@ -46,7 +46,7 @@ export class Nightlight {
       this._timeout = setTimeout(() => this.run(), timespan);
     }
     else {
-      if (currentTheme !== this.config.nightTheme) {
+      if (currentTheme !== this.config.nightTheme && !this.isOverrideSet()) {
         vscode.window.showInformationMessage("It's getting dark, I'm switching off the lights.");
         this.enableNightTheme();
       }
@@ -58,15 +58,21 @@ export class Nightlight {
   /**
    * Enable the configured day theme
    */
-  public enableDayTheme() {
+  public enableDayTheme(manual: boolean = false) {
     this.enableTheme(this.config.dayTheme);
+    if(manual){
+      this.setOverride();
+    }
   }
 
   /**
    * Enable the configured night theme
    */
-  public enableNightTheme() {
+  public enableNightTheme(manual: boolean = false) {
     this.enableTheme(this.config.nightTheme);
+    if(manual){
+      this.setOverride();
+    }
   }
 
   /**
@@ -76,10 +82,10 @@ export class Nightlight {
     const userConfig = vscode.workspace.getConfiguration();
     const currentTheme = userConfig.get("workbench.colorTheme");
     if(currentTheme === this.config.nightTheme){
-      this.enableDayTheme();
+      this.enableDayTheme(true);
     }
     else{
-      this.enableNightTheme();
+      this.enableNightTheme(true);
     }
   }
 
@@ -154,6 +160,26 @@ export class Nightlight {
     return (this.config.gpsLong !== null && this.config.gpsLat !== null)
       && (this.config.gpsLong >= -180 && this.config.gpsLong <= 180)
       && (this.config.gpsLat >= -85 && this.config.gpsLat <= 85);
+  }
+
+  /**
+   * Set the override flag
+   */
+  private setOverride() {
+    if (this.getNextDaylightTime() > this.getNextNightlightTime()) {
+      this.config.overrideUntil = this.getNextNightlightTime();
+    }
+    else {
+      this.config.overrideUntil = this.getNextDaylightTime();
+    }
+    this.config.save();
+  }
+
+  /**
+   * Check if the override flag is set and still active
+   */
+  private isOverrideSet(){
+    return this.config.overrideUntil !== null && this.config.overrideUntil >= new Date();
   }
 
 }

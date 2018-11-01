@@ -10,8 +10,8 @@ When it's getting dark, you might want to protect your eyes and switch automatic
 ### Switch theme at your preferred times
 Don't like the sunrise and sunset times? Leave them empty (null) and provide a manual day and night time. 
 
-### Manually switch
-By using CMD+SHIFT+P / CTRL+SHIFT+P you can manually switch between day and night theme.
+### Toggle with a shortcut
+Use the keyboard shortcut CTRL+ALT+N to switch between day and night theme. And if you prefer a different shortcut, you can of course change it through settings.
 
 ## Extension Settings
 
@@ -28,7 +28,8 @@ Nightlight can be configured by setting the following settings:
 
 ## 1.1.0
 
-* New feature: toggle between day and night theme using keyboard shortcut ctrl+alt+n (or of course set your own through settings)
+* New feature: toggle between day and night theme using keyboard shortcut ctrl+alt+n (or of course set your own through settings).
+* Bug fix: when the user had switched to the day/night theme manually, opening a new window would set it back.
 
 ### 1.0.0
 
