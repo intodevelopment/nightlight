@@ -2,7 +2,7 @@
     "name": "nightlight",
     "displayName": "Nightlight",
     "description": "Automatically switch themes when it's getting dark",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "publisher": "intodevelopment",
     "repository": {
         "type": "git",
@@ -38,8 +38,16 @@
             {
                 "command": "nightlight.enableNightTheme",
                 "title": "Nightlight: Enable night theme"
+            },
+            {
+                "command": "nightlight.toggle",
+                "title": "Nightlight: Toggle between day/night theme"
             }
         ],
+        "keybindings":[{
+            "command": "nightlight.toggle",
+            "key": "ctrl+alt+n"
+        }],
         "configuration": {
             "type": "object",
             "title": "Nightlight configuration",

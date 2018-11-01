@@ -28,6 +28,13 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(enableDayThemeCmd);
 
+    let toggleThemeCmd = vscode.commands.registerCommand('nightlight.toggle', () => {
+        if(nightlight !== null){
+            nightlight.toggleTheme();
+        }
+    });
+    context.subscriptions.push(toggleThemeCmd);
+
     // Register on config change
     let configChanged = vscode.workspace.onDidChangeConfiguration((e) => {
         let affected = e.affectsConfiguration("nightlight");

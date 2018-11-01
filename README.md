@@ -26,6 +26,10 @@ Nightlight can be configured by setting the following settings:
 
 ## Release Notes
 
+## 1.1.0
+
+* New feature: toggle between day and night theme using keyboard shortcut ctrl+alt+n (or of course set your own through settings)
+
 ### 1.0.0
 
 Initial release of Nightlight

@@ -70,6 +70,20 @@ export class Nightlight {
   }
 
   /**
+   * Toggle between day/night theme
+   */
+  public toggleTheme(){
+    const userConfig = vscode.workspace.getConfiguration();
+    const currentTheme = userConfig.get("workbench.colorTheme");
+    if(currentTheme === this.config.nightTheme){
+      this.enableDayTheme();
+    }
+    else{
+      this.enableNightTheme();
+    }
+  }
+
+  /**
    * Enable a theme
    * @param theme The theme to enable
    */
