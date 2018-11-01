@@ -179,7 +179,7 @@ export class Nightlight {
    * Check if the override flag is set and still active
    */
   private isOverrideSet(){
-    return this.config.overrideUntil !== null && this.config.overrideUntil >= new Date();
+    return this.config.overrideUntil !== null && this.config.overrideUntil > new Date();
   }
 
 }
