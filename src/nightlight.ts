@@ -5,7 +5,7 @@ var suncalc = require('suncalc');
 
 export class Nightlight {
 
-  private _timeout: null | NodeJS.Timer = null;
+  private _timer: null | NodeJS.Timer = null;
 
   constructor(private config: NightlightConfig) {
     if(!this.validateGpsCoordinates()){
@@ -17,16 +17,21 @@ export class Nightlight {
    * Start the Nightlight 
    */
   public start() {
-    this.run();
+    if(this._timer !== null){
+      this.stop();
+    }
+    this._timer = setInterval(() => {
+      this.run();
+    }, 60000);
   }
 
   /**
    * Stop the Nightlight
    */
   public stop() {
-    if (this._timeout !== null) {
-      clearInterval(this._timeout);
-      this._timeout = null;
+    if (this._timer !== null) {
+      clearInterval(this._timer);
+      this._timer = null;
     }
   }
 
@@ -42,16 +47,12 @@ export class Nightlight {
         vscode.window.showInformationMessage("Hello! I'll turn on the lights for you.");
         this.enableDayTheme();
       }
-      let timespan = DateUtil.subtract(this.getNextNightlightTime(), new Date());
-      this._timeout = setTimeout(() => this.run(), timespan);
     }
     else {
       if (currentTheme !== this.config.nightTheme && !this.isOverrideSet()) {
         vscode.window.showInformationMessage("It's getting dark, I'm switching off the lights.");
         this.enableNightTheme();
       }
-      let timespan = DateUtil.subtract(this.getNextDaylightTime(), new Date()) ;
-      this._timeout = setTimeout(() => this.run(), timespan);
     }
   }
   
@@ -116,7 +117,7 @@ export class Nightlight {
   private getNextDaylightTime(): Date {
     let date = new Date();
     if (this.validateGpsCoordinates()) {
-      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLong, this.config.gpsLat);
+      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLat, this.config.gpsLong);
       date = sunTimes.sunriseEnd;
     }
     else {
@@ -137,7 +138,7 @@ export class Nightlight {
   private getNextNightlightTime(): Date {
     let date = new Date();
     if (this.validateGpsCoordinates()) {
-      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLong, this.config.gpsLat);
+      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLat, this.config.gpsLong);
       date = sunTimes.sunset;
     }
     else {
@@ -159,7 +160,7 @@ export class Nightlight {
   private validateGpsCoordinates(): boolean {
     return (this.config.gpsLong !== null && this.config.gpsLat !== null)
       && (this.config.gpsLong >= -180 && this.config.gpsLong <= 180)
-      && (this.config.gpsLat >= -85 && this.config.gpsLat <= 85);
+      && (this.config.gpsLat >= -90 && this.config.gpsLat <= 90);
   }
 
   /**
