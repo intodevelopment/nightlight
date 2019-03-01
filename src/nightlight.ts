@@ -23,6 +23,7 @@ export class Nightlight {
     this._timer = setInterval(() => {
       this.run();
     }, 60000);
+    this.run();
   }
 
   /**
