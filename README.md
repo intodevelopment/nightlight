@@ -20,13 +20,20 @@ Use the keyboard shortcut CTRL+ALT+N to switch between day and night theme. And 
 Nightlight can be configured by setting the following settings:
 
 * `nightlight.nightTheme`: The theme to be displayed when it's night
+* `nightlight.nightIconTheme`: The icon theme to be displayed when it's night (default = your current icon theme)
 * `nightlight.dayTheme`: The theme to be displayed when it's day
+* `nightlight.dayIconTheme`: The icon theme to be displayed when it's day (default = your current icon theme)
 * `nightlight.dayTimeStart`: The time (format HH:mm) at which day time starts (if no GPS coordinates are configured)
 * `nightlight.dayTimeEnd`: The time (format HH:mm) at which day time ends (if no GPS coordinates are configured) 
 * `nightlight.gpsLong`: The GPS longitude coordinate. This is used to determine the sunrise and sunset locally on your device.
 * `nightlight.gpsLat`: The GPS latitude coordinate. This is used to determine the sunrise and sunset locally on your device.
 
 ## Release Notes
+
+### 1.3.0
+
+* [Feature #1: Switch file icon themes as well](https://github.com/intodevelopment/nightlight/issues/1)
+* Bug fix: improved time calculations
 
 ### 1.2.0
 

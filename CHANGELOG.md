@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "nightlight" extension will be documented in this file.
 
+## [1.3.0]
+- [Feature #1: Switch file icon themes as well](https://github.com/intodevelopment/nightlight/issues/1)
+- Bug fix: improved time calculations
+
 ## [1.2.0]
 - Bug fix: when the time to switch themes was missed because your computer was in standby mode, it would only switch themes when a new window was opened.
 

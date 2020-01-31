@@ -62,6 +62,7 @@ export class Nightlight {
    */
   public enableDayTheme(manual: boolean = false) {
     this.enableTheme(this.config.dayTheme);
+    this.enableIconTheme(this.config.dayIconTheme);
     if(manual){
       this.setOverride();
     }
@@ -72,6 +73,7 @@ export class Nightlight {
    */
   public enableNightTheme(manual: boolean = false) {
     this.enableTheme(this.config.nightTheme);
+    this.enableIconTheme(this.config.nightIconTheme);
     if(manual){
       this.setOverride();
     }
@@ -98,6 +100,15 @@ export class Nightlight {
   private enableTheme(theme: string){
     const userConfig = vscode.workspace.getConfiguration();
     userConfig.update("workbench.colorTheme", theme, vscode.ConfigurationTarget.Global);
+  }
+
+  /**
+   * Enable an icon theme
+   * @param iconTheme The icon theme to enable
+   */
+  private enableIconTheme(iconTheme: string){
+    const userConfig = vscode.workspace.getConfiguration();
+    userConfig.update("workbench.iconTheme", iconTheme, vscode.ConfigurationTarget.Global);
   }
 
   /**

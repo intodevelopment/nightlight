@@ -15,9 +15,8 @@ export class DateUtil {
    * @returns {boolean} True if dateAndTime is >= startDate and dateTime <= endDate, otherwise false
    */
   public static isWithinTimeRange(dateAndTime: Date, startDate: Date, endDate: Date): boolean {
-    return dateAndTime.getHours() > startDate.getHours() && dateAndTime.getHours() < endDate.getHours()
-      || (dateAndTime.getHours() === startDate.getHours() && dateAndTime.getMinutes() >= startDate.getMinutes())
-      || (dateAndTime.getHours() === endDate.getHours() && dateAndTime.getMinutes() < endDate.getMinutes());
+    return (dateAndTime.getHours() > startDate.getHours() || (dateAndTime.getHours() === startDate.getHours() && dateAndTime.getMinutes() >= startDate.getMinutes()))
+      && (dateAndTime.getHours() < endDate.getHours() || (dateAndTime.getHours() === endDate.getHours() && dateAndTime.getMinutes() <= endDate.getMinutes()));
   }
 
   /**
