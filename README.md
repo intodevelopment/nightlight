@@ -27,6 +27,7 @@ Nightlight can be configured by setting the following settings:
 * `nightlight.dayTimeEnd`: The time (format HH:mm) at which day time ends (if no GPS coordinates are configured) 
 * `nightlight.gpsLong`: The GPS longitude coordinate. This is used to determine the sunrise and sunset locally on your device.
 * `nightlight.gpsLat`: The GPS latitude coordinate. This is used to determine the sunrise and sunset locally on your device.
+* `nightlight.quiet`: Switch theme quietly (don't show notification).
 
 ## Release Notes
 

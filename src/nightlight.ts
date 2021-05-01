@@ -45,13 +45,17 @@ export class Nightlight {
 
     if (this.isDayTime()) {
       if (currentTheme !== this.config.dayTheme && !this.isOverrideSet()) {
-        vscode.window.showInformationMessage("Hello! I'll turn on the lights for you.");
+        if (!this.config.quiet) {
+          vscode.window.showInformationMessage("Hello! I'll turn on the lights for you.");
+        }
         this.enableDayTheme();
       }
     }
     else {
       if (currentTheme !== this.config.nightTheme && !this.isOverrideSet()) {
-        vscode.window.showInformationMessage("It's getting dark, I'm switching off the lights.");
+        if (!this.config.quiet) {
+          vscode.window.showInformationMessage("It's getting dark, I'm switching off the lights.");
+        }
         this.enableNightTheme();
       }
     }
