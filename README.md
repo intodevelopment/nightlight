@@ -31,6 +31,10 @@ Nightlight can be configured by setting the following settings:
 
 ## Release Notes
 
+### 1.4.0
+
+* Feature: added quiet mode (don't show notification) - thanks @henvic
+
 ### 1.3.0
 
 * [Feature #1: Switch file icon themes as well](https://github.com/intodevelopment/nightlight/issues/1)

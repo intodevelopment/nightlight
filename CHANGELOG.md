@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the "nightlight" extension will be documented in this file.
 
+### [1.4.0]
+- Feature: added quiet mode (don't show notification) - thanks @henvic
+
 ## [1.3.0]
 - [Feature #1: Switch file icon themes as well](https://github.com/intodevelopment/nightlight/issues/1)
 - Bug fix: improved time calculations
