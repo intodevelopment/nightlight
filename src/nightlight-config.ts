@@ -11,6 +11,7 @@ export class NightlightConfig {
   public dayTimeEnd: Date = new Date("1970-01-01 21:00");
   public gpsLong: number | null = null;
   public gpsLat: number | null = null;
+  public quiet: boolean = false;
   public overrideUntil: Date | null = null;
 
   public static load() {
@@ -25,6 +26,7 @@ export class NightlightConfig {
     config.dayTimeEnd = configDayTimeEnd !== null ? configDayTimeEnd : config.dayTimeEnd;
     config.gpsLong = vscode.workspace.getConfiguration('nightlight').get('gpsLong') || config.gpsLong;
     config.gpsLat = vscode.workspace.getConfiguration('nightlight').get('gpsLat') || config.gpsLat;
+    config.quiet = vscode.workspace.getConfiguration('nightlight').get('quiet') || config.quiet;
     config.overrideUntil = new Date(vscode.workspace.getConfiguration('nightlight').get('overrideUntil') as string) || config.overrideUntil;
     return config;
   }

@@ -85,6 +85,11 @@
                     "default": null,
                     "description": "The GPS latitude coordinate. This is used to determine the sunrise and sunset locally on your device."
                 },
+                "nightlight.quiet": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Switch theme quietly (don't show notification)"
+                },
                 "nightlight.overrideUntil": {
                     "type": "date",
                     "default": null,
