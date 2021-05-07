@@ -31,7 +31,7 @@ Nightlight can be configured by setting the following settings:
 
 ## Release Notes
 
-### [1.4.1]
+### 1.4.1
 * Change: day and night icons are now configurable through the settings interface
 
 ### 1.4.0
