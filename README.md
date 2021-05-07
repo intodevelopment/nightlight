@@ -31,6 +31,9 @@ Nightlight can be configured by setting the following settings:
 
 ## Release Notes
 
+### [1.4.1]
+* Change: day and night icons are now configurable through the settings interface
+
 ### 1.4.0
 
 * Feature: added quiet mode (don't show notification) - thanks @henvic
