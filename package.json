@@ -1,124 +1,131 @@
 {
-    "name": "nightlight",
-    "displayName": "Nightlight",
-    "description": "Automatically switch themes when it's getting dark",
-    "version": "1.4.1",
-    "license": "MIT",
-    "publisher": "intodevelopment",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/intodevelopment/nightlight.git"
-    },
-    "engines": {
-        "vscode": "^1.26.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "keywords": [
-        "night",
-        "night shift",
-        "night light",
-        "theme switch",
-        "dark"
-    ],
-    "icon": "images/icon.png",
-    "galleryBanner": {
-        "color": "#091427",
-        "theme": "dark"
-    },
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "nightlight.enableDayTheme",
-                "title": "Nightlight: Enable day theme"
-            },
-            {
-                "command": "nightlight.enableNightTheme",
-                "title": "Nightlight: Enable night theme"
-            },
-            {
-                "command": "nightlight.toggle",
-                "title": "Nightlight: Toggle between day/night theme"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "nightlight.toggle",
-                "key": "ctrl+alt+n"
-            }
-        ],
-        "configuration": {
-            "type": "object",
-            "title": "Nightlight configuration",
-            "properties": {
-                "nightlight.nightTheme": {
-                    "type": "string",
-                    "default": "Default Dark+",
-                    "description": "The theme to display when it is night time"
-                },
-                "nightlight.nightIconTheme": {
-                    "type": "string",
-                    "default": "vs-minimal",
-                    "description": "The icon theme to display when it's night time"
-                },
-                "nightlight.dayTheme": {
-                    "type": "string",
-                    "default": "Default Light+",
-                    "description": "The theme to display when it's daytime"
-                },
-                "nightlight.dayIconTheme": {
-                    "type": "string",
-                    "default": "vs-minimal",
-                    "description": "The icon theme to display when it's daytime"
-                },
-                "nightlight.dayTimeStart": {
-                    "type": "string",
-                    "default": "10:00",
-                    "description": "The time (format HH:mm) at which daytime starts (if no GPS coordinates are configured)"
-                },
-                "nightlight.dayTimeEnd": {
-                    "type": "string",
-                    "default": "21:00",
-                    "description": "The time (format HH:mm) at which daytime ends (if no GPS coordinates are configured)"
-                },
-                "nightlight.gpsLong": {
-                    "type": "number",
-                    "default": null,
-                    "description": "The GPS longitude coordinate. This is used to determine the sunrise and sunset locally on your device."
-                },
-                "nightlight.gpsLat": {
-                    "type": "number",
-                    "default": null,
-                    "description": "The GPS latitude coordinate. This is used to determine the sunrise and sunset locally on your device."
-                },
-                "nightlight.quiet": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Switch theme quietly (don't show notification)"
-                }
-            }
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^8.10.25",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.36"
-    },
-    "dependencies": {
-        "suncalc": "^1.8.0"
-    }
+	"name": "nightlight",
+	"displayName": "Nightlight",
+	"description": "Automatically switch themes when it's getting dark",
+	"version": "2.0.0",
+	"license": "MIT",
+	"publisher": "intodevelopment",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/intodevelopment/nightlight.git"
+	},
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"night",
+		"night shift",
+		"night light",
+		"theme switch",
+		"dark"
+	],
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#091427",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "nightlight.enableDayTheme",
+				"title": "Nightlight: Enable day theme"
+			},
+			{
+				"command": "nightlight.enableNightTheme",
+				"title": "Nightlight: Enable night theme"
+			},
+			{
+				"command": "nightlight.toggle",
+				"title": "Nightlight: Toggle between day/night theme"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "nightlight.toggle",
+				"key": "ctrl+alt+n"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Nightlight configuration",
+			"properties": {
+				"nightlight.nightTheme": {
+					"type": "string",
+					"default": "Default Dark+",
+					"description": "The theme to display when it is night time"
+				},
+				"nightlight.nightIconTheme": {
+					"type": "string",
+					"default": "vs-minimal",
+					"description": "The icon theme to display when it's night time"
+				},
+				"nightlight.dayTheme": {
+					"type": "string",
+					"default": "Default Light+",
+					"description": "The theme to display when it's daytime"
+				},
+				"nightlight.dayIconTheme": {
+					"type": "string",
+					"default": "vs-minimal",
+					"description": "The icon theme to display when it's daytime"
+				},
+				"nightlight.dayTimeStart": {
+					"type": "string",
+					"default": "10:00",
+					"description": "The time (format HH:mm) at which daytime starts (if no GPS coordinates are configured)"
+				},
+				"nightlight.dayTimeEnd": {
+					"type": "string",
+					"default": "21:00",
+					"description": "The time (format HH:mm) at which daytime ends (if no GPS coordinates are configured)"
+				},
+				"nightlight.gpsLong": {
+					"type": "number",
+					"default": null,
+					"description": "The GPS longitude coordinate. This is used to determine the sunrise and sunset locally on your device."
+				},
+				"nightlight.gpsLat": {
+					"type": "number",
+					"default": null,
+					"description": "The GPS latitude coordinate. This is used to determine the sunrise and sunset locally on your device."
+				},
+				"nightlight.quiet": {
+					"type": "boolean",
+					"default": false,
+					"description": "Switch theme quietly (don't show notification)"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.59.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"eslint": "^7.27.0",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2"
+	},
+	"dependencies": {
+		"suncalc": "^1.8.0"
+	}
 }
