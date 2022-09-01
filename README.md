@@ -31,7 +31,12 @@ Nightlight can be configured by setting the following settings:
 
 ## Release Notes
 
+### 1.5.0
+
+* Feature: the extension is now also a Web extension, supporting [vscode.dev](https://vscode.dev) and [github.dev](https://github.dev) - thanks @onlined
+
 ### 1.4.1
+
 * Change: day and night icons are now configurable through the settings interface
 
 ### 1.4.0

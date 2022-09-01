@@ -31,7 +31,7 @@
 			"preLaunchTask": "${defaultBuildTask}"
 		},
 		{
-			"name": "Run Web Extension in VS Code",
+			"name": "Run Web Extension ",
 			"type": "pwa-extensionHost",
 			"debugWebWorkerHost": true,
 			"request": "launch",
@@ -43,6 +43,6 @@
 				"${workspaceFolder}/out/web/**/*.js"
 			],
 			"preLaunchTask": "npm: watch-web"
-		},
+		}
 	]
 }
