@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the "nightlight" extension will be documented in this file.
 
+## [2.0.0]
+- Feature: the extension is now also a Web extension, supporting [vscode.dev](https://vscode.dev) and [github.dev](https://github.dev) - thanks @onlined
+
 ## [1.4.1]
 - Change: day and night icons are now configurable through the settings interface
 
