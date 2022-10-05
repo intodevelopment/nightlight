@@ -5,7 +5,7 @@ var suncalc = require('suncalc');
 
 export class Nightlight {
 
-  private _timer: null | NodeJS.Timer = null;
+  private _timer: null | ReturnType<typeof setInterval> = null;
 
   constructor(private config: NightlightConfig) {
     if(!this.validateGpsCoordinates()){
