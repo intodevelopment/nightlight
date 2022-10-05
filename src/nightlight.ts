@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { NightlightConfig } from './nightlight-config';
 import { DateUtil } from './util/date.util';
-var suncalc = require('suncalc');
+import * as suncalc from 'suncalc';
 
 export class Nightlight {
 
@@ -133,7 +133,7 @@ export class Nightlight {
   private getNextDaylightTime(): Date {
     let date = new Date();
     if (this.validateGpsCoordinates()) {
-      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLat, this.config.gpsLong);
+      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLat!, this.config.gpsLong!);
       date = sunTimes.sunriseEnd;
     }
     else {
@@ -154,7 +154,7 @@ export class Nightlight {
   private getNextNightlightTime(): Date {
     let date = new Date();
     if (this.validateGpsCoordinates()) {
-      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLat, this.config.gpsLong);
+      const sunTimes = suncalc.getTimes(new Date(), this.config.gpsLat!, this.config.gpsLong!);
       date = sunTimes.sunset;
     }
     else {
