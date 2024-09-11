@@ -125,7 +125,7 @@
 		"@types/webpack-env": "^1.17.0",
 		"@typescript-eslint/eslint-plugin": "^4.26.0",
 		"@typescript-eslint/parser": "^4.26.0",
-		"@vscode/test-web": "^0.0.29",
+		"@vscode/test-web": "^0.0.60",
 		"eslint": "^7.27.0",
 		"glob": "^7.1.7",
 		"mocha": "^10.0.0",
